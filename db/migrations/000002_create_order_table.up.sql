@@ -1,0 +1,11 @@
+CREATE TABLE order (
+    order_id BIGINT PRIMARY KEY,
+    customer_id BIGINT NOT NULL,
+    order_date TIMESTAMP WITH TIME ZONE NOT NULL,
+    item VARCHAR(255) NOT NULL,
+    status INT NOT NULL,
+    created_at TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP,
+    updated_at TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP,
+    deleted_at TIMESTAMP WITH TIME ZONE,
+    FOREIGN KEY (customer_id) REFERENCES customer(customer_id)
+);
